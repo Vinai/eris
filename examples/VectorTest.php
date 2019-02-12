@@ -8,8 +8,8 @@ class VectorTest extends PHPUnit_Framework_TestCase
     public function testConcatenationMaintainsLength()
     {
         $this->forAll(
-            Generator\vector(10, Generator\nat(1000)),
-            Generator\vector(10, Generator\nat(1000))
+            Generator\vector(10, Generator\nat()),
+            Generator\vector(10, Generator\nat())
         )
             ->then(function ($first, $second) {
                 $concatenated = array_merge($first, $second);
